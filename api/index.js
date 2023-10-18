@@ -3,11 +3,15 @@ import env from "dotenv";
 import { db } from "./config/db.js";
 import { userRouter } from "./routes/user.route.js";
 import { authRouter } from "./routes/auth.route.js";
+import cors from "cors";
 
 env.config();
 
 const app = express();
 app.use(express.json());
+app.use(cors());
+
+console.log("test");
 
 db();
 
