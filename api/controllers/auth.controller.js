@@ -14,7 +14,9 @@ export const signUp = async (req, res, next) => {
   try {
     await newUser.save();
 
-    res.status(201).json("User create successfully");
+    res
+      .status(200)
+      .json({ user: newUser, message: "User create successfully123" });
   } catch (error) {
     next(error);
   }
@@ -22,6 +24,7 @@ export const signUp = async (req, res, next) => {
 
 export const signIn = async (req, res, next) => {
   const { email, password } = req.body;
+  console.log(req.body);
 
   try {
     const validUser = await userModel.findOne({ email });
