@@ -39,7 +39,7 @@ export const signIn = async (req, res, next) => {
         expires: new Date(Date.now() + 24 * 60 * 60 * 1000),
       })
       .status(200)
-      .json({ rest });
+      .json({ ...rest });
   } catch (error) {
     next(error);
   }
