@@ -5,6 +5,7 @@ import { db } from "./config/db.js";
 import { userRouter } from "./routes/user.route.js";
 import { authRouter } from "./routes/auth.route.js";
 import cors from "cors";
+import { listRouter } from "./routes/listRouter.js";
 
 env.config();
 
@@ -26,6 +27,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/listing", listRouter);
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
