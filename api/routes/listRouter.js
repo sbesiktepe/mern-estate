@@ -13,5 +13,6 @@ listRouter.post("/create", verifyToken, createListing);
 listRouter.delete("/delete/:id", verifyToken, deleteListing);
 listRouter.post("/update/:id", verifyToken, updateListing);
 listRouter.get("/get/:id", getListing);
+listRouter.get("/get", getListings);
 
 export { listRouter };
